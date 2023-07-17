@@ -18,8 +18,8 @@ class Order(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
 
-    @Column(name = "order_name")
-    val name: String,
+    @Column(name = "member_name")
+    val memberName: String,
 
     @OneToMany(cascade=[CascadeType.ALL])
     @JoinColumn(name = "order_product_id")
