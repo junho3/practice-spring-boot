@@ -14,11 +14,11 @@ import javax.persistence.Table
 @Table(name = "order")
 class Order(
     @Id
-    @Column(name = "id")
+    @Column(name = "order_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
 
-    @Column(name = "name")
+    @Column(name = "order_name")
     val name: String,
 
     @OneToMany(cascade=[CascadeType.ALL])
