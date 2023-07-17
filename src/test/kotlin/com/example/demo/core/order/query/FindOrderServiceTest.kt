@@ -1,6 +1,7 @@
 package com.example.demo.core.order.query
 
 import com.example.demo.core.order.domain.Order
+import com.example.demo.core.order.domain.OrderProduct
 import com.example.demo.core.order.port.OrderRepository
 import com.example.demo.createOrder
 import io.kotest.assertions.throwables.shouldThrow
@@ -29,7 +30,7 @@ class FindOrderServiceTest(
             it("Order 객체를 리턴한다.") {
                 val result = findOrderService.findById(1)
 
-                result.shouldBeInstanceOf<Order>()
+                result.shouldBeInstanceOf<OrderProduct>()
             }
         }
 
