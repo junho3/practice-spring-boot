@@ -19,5 +19,5 @@ class OrderProduct(
     val name: String,
 
     @Column(name = "order_product_quantity")
-    val quantity: Long,
+    val quantity: Long
 )
