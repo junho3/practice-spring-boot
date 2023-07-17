@@ -17,6 +17,10 @@ class FindOrderServiceTest(
     )
 ) : DescribeSpec({
 
+    beforeSpec {
+        orderRepository.deleteAll()
+    }
+
     describe("findById 메소드는") {
         context("주문 데이터가 존재하면") {
             orderRepository.save(createOrder())
