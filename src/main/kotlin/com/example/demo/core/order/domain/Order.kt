@@ -11,7 +11,7 @@ import javax.persistence.OneToMany
 import javax.persistence.Table
 
 @Entity
-@Table(name = "order")
+@Table(name = "orders")
 class Order(
     @Id
     @Column(name = "order_id")
