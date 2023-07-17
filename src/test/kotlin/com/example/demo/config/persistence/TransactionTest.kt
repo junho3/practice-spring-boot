@@ -19,9 +19,9 @@ import org.springframework.context.annotation.Import
 class TransactionTest(
     private val orderRepository: OrderRepository,
     private val findOrderService: FindOrderService = FindOrderService(
-        orderRepository = orderRepository
+        orderRepository = orderRepository,
     ),
-    private val transaction: Transaction
+    private val transaction: Transaction,
 ) : DescribeSpec({
 
     beforeSpec {

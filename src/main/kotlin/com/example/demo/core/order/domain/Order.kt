@@ -23,5 +23,5 @@ class Order(
 
     @OneToMany(cascade = [CascadeType.ALL])
     @JoinColumn(name = "order_product_id")
-    val products: MutableList<OrderProduct> = mutableListOf()
+    val products: MutableList<OrderProduct> = mutableListOf(),
 )

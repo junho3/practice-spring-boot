@@ -105,5 +105,5 @@ class DynamicRoutingDataSource : AbstractRoutingDataSource() {
  * */
 enum class DataSourceType(private val description: String) {
     WRITE("Write 전용 DB"),
-    READ("Read 전용 DB")
+    READ("Read 전용 DB"),
 }

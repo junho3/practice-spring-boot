@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional
 
 @Service
 class FindOrderService(
-    private val orderRepository: OrderRepository
+    private val orderRepository: OrderRepository,
 ) {
     @Transactional(readOnly = true)
     fun findById(id: Long): Order {
