@@ -34,9 +34,22 @@ class FindMemberCountServiceTest(
 
         afterTest { memberJpaRepository.deleteAll() }
 
-        context("1000명의 회원을 Jpa로 저장했을 때") {
+        context("1000명의 회원을 Jpa SaveAll()로 저장했을 때") {
 
             memberJpaRepository.saveAll(members)
+
+            it("전체회원 수 1000을 리턴한다.") {
+                val result = memberCountService.getMemberCountByChunk(10)
+
+                result shouldBe count
+            }
+        }
+
+        context("1000명의 회원을 Jpa Save()로 저장했을 때") {
+
+            for (i in 1..count) {
+                memberJpaRepository.save(createMember())
+            }
 
             it("전체회원 수 1000을 리턴한다.") {
                 val result = memberCountService.getMemberCountByChunk(10)
