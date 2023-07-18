@@ -3,7 +3,7 @@ package com.example.demo.core.member.query
 import com.example.demo.core.member.domain.Member
 import com.example.demo.core.member.port.MemberRepository
 import com.example.demo.createMember
-import com.example.demo.infrastructure.persistence.MemberJpaRepository
+import com.example.demo.infrastructure.persistence.member.MemberJpaRepository
 import io.kotest.core.annotation.DisplayName
 import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.matchers.shouldBe
