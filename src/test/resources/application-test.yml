@@ -17,11 +17,14 @@ spring:
       connection-timeout: 30000
       max-lifetime: 900000
   jpa:
+    hibernate:
+      ddl-auto: create
     properties:
       hibernate:
-        show_sql: false
-        format_sql:
-    defer-datasource-initialization: false
-  sql:
-    init:
-      mode: never
+        show_sql: true
+        format_sql: true
+        order_inserts: true
+        order_updates: true
+        jdbc:
+          batch_size: 1000
+    open-in-view: false
