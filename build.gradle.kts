@@ -25,6 +25,7 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("io.github.microutils:kotlin-logging-jvm:2.1.21")
 
     /** JPA */
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
