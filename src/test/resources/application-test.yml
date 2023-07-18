@@ -2,7 +2,7 @@ spring:
   datasource:
     reader:
       driver-class-name: org.h2.Driver
-      jdbc-url: jdbc:h2:mem:practice?MODE=MYSQL&rewriteBatchedStatements=true
+      jdbc-url: jdbc:h2:mem:practice?MODE=MYSQL&rewriteBatchedStatements=true&profileSQL=true&logger=Slf4JLogger&maxQuerySizeToLog=999999
       username: sa
       password:
       maximum-pool-size: 30
@@ -10,7 +10,7 @@ spring:
       max-lifetime: 900000
     writer:
       driver-class-name: org.h2.Driver
-      jdbc-url: jdbc:h2:mem:practice?MODE=MYSQL&rewriteBatchedStatements=true
+      jdbc-url: jdbc:h2:mem:practice?MODE=MYSQL&rewriteBatchedStatements=true&profileSQL=true&logger=Slf4JLogger&maxQuerySizeToLog=999999
       username: sa
       password:
       maximum-pool-size: 30
@@ -28,3 +28,8 @@ spring:
         jdbc:
           batch_size: 1000
     open-in-view: false
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
