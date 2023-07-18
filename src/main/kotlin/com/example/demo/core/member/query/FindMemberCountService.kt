@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional
 
 @Transactional(readOnly = true)
 @Service
-class FindMemberService(
+class FindMemberCountService(
     private val memberRepository: MemberRepository,
 ) {
 
