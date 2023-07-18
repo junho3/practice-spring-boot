@@ -6,7 +6,6 @@ import org.springframework.data.domain.PageRequest
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
-
 @Transactional(readOnly = true)
 @Service
 class FindMemberCountService(
@@ -25,7 +24,6 @@ class FindMemberCountService(
                 count++
                 logger.info { "count: $count | name: ${it.name}" }
             }
-
 
             page++
         } while (memberPages.hasNext())
