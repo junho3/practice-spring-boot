@@ -20,8 +20,8 @@ class FindMemberCountServiceTest(
 ) : DescribeSpec({
 
     describe("getMemberCountByChunk 메소드는") {
-        context("1000명의 회원이 저장되어 있을 때") {
-            val count = 1_000
+        val count = 1_000
+        context("${count}명의 회원이 저장되어 있을 때") {
 
             val members: MutableList<Member> = mutableListOf()
             for (i in 1..count) {
