@@ -20,7 +20,8 @@ class FindMemberCountServiceTest(
         memberRepository = memberRepository,
     ),
 ) : DescribeSpec({
-    afterSpec { memberJpaRepository.deleteAll() }
+
+    beforeSpec { memberJpaRepository.deleteAll() }
 
     describe("getMemberCountByChunk 메소드는") {
         context("1000명의 회원이 존재했을 때") {
