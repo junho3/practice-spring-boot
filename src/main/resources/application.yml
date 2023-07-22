@@ -3,7 +3,7 @@ server:
   shutdown: graceful
 
 spring:
-  application.name: practice-spring-boot
+  application.name: practice-kotlin-spring-boot
   datasource:
     reader:
       driver-class-name: org.h2.Driver
