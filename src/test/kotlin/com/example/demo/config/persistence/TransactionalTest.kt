@@ -10,9 +10,11 @@ import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.matchers.shouldBe
 import io.kotest.matchers.types.shouldBeInstanceOf
 import org.hibernate.LazyInitializationException
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
+import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.test.context.ActiveProfiles
 
-@DataJpaTest
+@ActiveProfiles("test")
+@SpringBootTest
 @DisplayName("TransactionalTest")
 class TransactionalTest(
     private val orderRepository: OrderRepository,
