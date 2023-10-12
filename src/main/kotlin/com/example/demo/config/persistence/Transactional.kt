@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component
 import org.springframework.transaction.annotation.Transactional
 
 @Component
-class Transaction {
+class Transactional {
     @Transactional
     operator fun <T> invoke(functionInTransaction: () -> T?): T? {
         return functionInTransaction()

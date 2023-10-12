@@ -13,15 +13,15 @@ import org.hibernate.LazyInitializationException
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 import org.springframework.context.annotation.Import
 
-@Import(Transaction::class)
+@Import(Transactional::class)
 @DataJpaTest
-@DisplayName("TransactionTest")
-class TransactionTest(
+@DisplayName("TransactionalTest")
+class TransactionalTest(
     private val orderRepository: OrderRepository,
     private val findOrderService: FindOrderService = FindOrderService(
         orderRepository = orderRepository,
     ),
-    private val transaction: Transaction,
+    private val transactional: Transactional,
 ) : DescribeSpec({
 
     beforeSpec {
@@ -34,7 +34,7 @@ class TransactionTest(
 
         context("invoke 메소드를 사용하면") {
             it("Order 객체 조회 후, Lazy 로딩하여 products 객체에 접근한다.") {
-                transaction {
+                transactional {
                     val result = findOrderService.findById(1)
 
                     result.shouldBeInstanceOf<Order>()
