@@ -10,18 +10,17 @@ import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.matchers.shouldBe
 import io.kotest.matchers.types.shouldBeInstanceOf
 import org.hibernate.LazyInitializationException
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
-import org.springframework.context.annotation.Import
+import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.test.context.ActiveProfiles
 
-@Import(Transaction::class)
-@DataJpaTest
-@DisplayName("TransactionTest")
-class TransactionTest(
+@ActiveProfiles("test")
+@SpringBootTest
+@DisplayName("TransactionalTest")
+class TransactionalTest(
     private val orderRepository: OrderRepository,
     private val findOrderService: FindOrderService = FindOrderService(
         orderRepository = orderRepository,
     ),
-    private val transaction: Transaction,
 ) : DescribeSpec({
 
     beforeSpec {
@@ -34,7 +33,7 @@ class TransactionTest(
 
         context("invoke 메소드를 사용하면") {
             it("Order 객체 조회 후, Lazy 로딩하여 products 객체에 접근한다.") {
-                transaction {
+                Transactional {
                     val result = findOrderService.findById(1)
 
                     result.shouldBeInstanceOf<Order>()
