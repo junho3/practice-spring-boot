@@ -5,9 +5,8 @@ import org.springframework.transaction.annotation.Transactional
 
 @Component
 class Transactional(
-    _transactionalAdvice: TransactionalAdvice
+    _transactionalAdvice: TransactionalAdvice,
 ) {
-
     init {
         transactional = _transactionalAdvice
     }
