@@ -5,7 +5,7 @@ import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe
 import kotlin.math.floor
 
-@DisplayName("양수, 음수에 따른 반올림 테스트")
+@DisplayName("양수, 음수에 따른 내림 테스트")
 internal class FloorTest : FunSpec({
 
     test("4.5를 floor하면 4가 된다") {
