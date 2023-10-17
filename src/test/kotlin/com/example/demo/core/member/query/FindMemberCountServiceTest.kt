@@ -1,7 +1,7 @@
 package com.example.demo.core.member.query
 
 import com.example.demo.core.member.domain.Member
-import com.example.demo.core.member.port.MemberRepository
+import com.example.demo.infrastructure.persistence.member.MemberRepository
 import com.example.demo.createMember
 import com.example.demo.infrastructure.persistence.member.MemberJpaRepository
 import io.kotest.core.annotation.DisplayName
