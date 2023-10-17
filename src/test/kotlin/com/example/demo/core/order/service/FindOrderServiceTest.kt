@@ -1,4 +1,4 @@
-package com.example.demo.core.order.query
+package com.example.demo.core.order.service
 
 import com.example.demo.core.order.domain.Order
 import com.example.demo.core.order.port.OrderRepository
