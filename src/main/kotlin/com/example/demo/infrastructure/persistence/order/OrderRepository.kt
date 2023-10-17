@@ -1,4 +1,4 @@
-package com.example.demo.core.order.port
+package com.example.demo.infrastructure.persistence.order
 
 import com.example.demo.core.order.domain.Order
 

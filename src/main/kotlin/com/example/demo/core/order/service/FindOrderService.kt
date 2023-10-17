@@ -1,7 +1,7 @@
 package com.example.demo.core.order.service
 
 import com.example.demo.core.order.domain.Order
-import com.example.demo.core.order.port.OrderRepository
+import com.example.demo.infrastructure.persistence.order.OrderRepository
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
