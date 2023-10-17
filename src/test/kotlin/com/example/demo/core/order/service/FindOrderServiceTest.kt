@@ -1,7 +1,7 @@
-package com.example.demo.core.order.query
+package com.example.demo.core.order.service
 
 import com.example.demo.core.order.domain.Order
-import com.example.demo.core.order.port.OrderRepository
+import com.example.demo.infrastructure.persistence.order.OrderRepository
 import com.example.demo.createOrder
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.annotation.DisplayName

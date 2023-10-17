@@ -1,4 +1,4 @@
-package com.example.demo.core.member.port
+package com.example.demo.infrastructure.persistence.member
 
 import com.example.demo.core.member.domain.Member
 import org.springframework.data.domain.Page

@@ -1,6 +1,6 @@
-package com.example.demo.core.member.query
+package com.example.demo.core.member.service
 
-import com.example.demo.core.member.port.MemberRepository
+import com.example.demo.infrastructure.persistence.member.MemberRepository
 import mu.KotlinLogging
 import org.springframework.data.domain.PageRequest
 import org.springframework.stereotype.Service
