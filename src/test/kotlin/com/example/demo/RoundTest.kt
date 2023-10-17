@@ -28,7 +28,7 @@ internal class RoundTest : FunSpec({
     }
 
     test("-4.5를 roundToLong하면 -5가 된다.") {
-        val actual = -4.5.roundToLong()
+        val actual = (-4.5).roundToLong()
 
         actual shouldBe -5
     }
