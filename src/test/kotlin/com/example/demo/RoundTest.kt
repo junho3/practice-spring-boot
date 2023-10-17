@@ -7,7 +7,7 @@ import kotlin.math.round
 import kotlin.math.roundToLong
 
 @DisplayName("코틀린 반올림 함수별 반올림 테스트")
-class RoundTest : FunSpec({
+internal class RoundTest : FunSpec({
 
     test("4.5를 round하면 4가 된다.") {
         val actual = round(4.5)
