@@ -46,4 +46,10 @@ internal class RoundTest : FunSpec({
 
         actual shouldBe -5
     }
+
+    test("-4.5를 roundToLong.unaryMinus 하면 -5가 된다.") {
+        val actual = 4.5.roundToLong().unaryMinus()
+
+        actual shouldBe -5
+    }
 })
