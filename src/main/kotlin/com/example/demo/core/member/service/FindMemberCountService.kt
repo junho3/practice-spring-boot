@@ -1,4 +1,4 @@
-package com.example.demo.core.member.query
+package com.example.demo.core.member.service
 
 import com.example.demo.infrastructure.persistence.member.MemberRepository
 import mu.KotlinLogging

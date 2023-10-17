@@ -1,7 +1,6 @@
 package com.example.demo.core.member.service
 
 import com.example.demo.core.member.domain.Member
-import com.example.demo.core.member.query.FindMemberCountService
 import com.example.demo.infrastructure.persistence.member.MemberRepository
 import com.example.demo.createMember
 import com.example.demo.infrastructure.persistence.member.MemberJpaRepository
