@@ -32,7 +32,10 @@ spring:
           batch_size: 1000
     open-in-view: false
 
-logging:
-  level:
-    org.hibernate.SQL: debug
-    org.hibernate.type: trace
+logging.level:
+  org.hibernate.SQL: DEBUG
+  org.hibernate.type: TRACE
+  org.springframework.orm.jpa: DEBUG
+  org.springframework.transaction: DEBUG
+  org.springframework.jdbc: DEBUG
+  Exposed: DEBUG
