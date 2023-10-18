@@ -32,6 +32,12 @@ dependencies {
     /** JPA */
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 
+    /** Exposed */
+    implementation("org.jetbrains.exposed:exposed-core:0.44.0")
+    implementation("org.jetbrains.exposed:exposed-dao:0.44.0")
+    implementation("org.jetbrains.exposed:exposed-jdbc:0.44.0")
+    implementation("org.jetbrains.exposed:exposed-java-time:0.44.0")
+
     runtimeOnly("com.h2database:h2")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
