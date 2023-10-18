@@ -47,10 +47,10 @@ class SaveMassMemberDataTest(
 
     test("1000명의 회원 데이터를 Exposed batchInsert()로 저장했을 때") {
         val members: MutableList<Member> = mutableListOf()
-        for (i in 1 .. count) {
+        for (i in 1..count) {
             members.add(createMember())
         }
 
         memberExposedRepository.saveAll(members)
     }
-})
+},)
