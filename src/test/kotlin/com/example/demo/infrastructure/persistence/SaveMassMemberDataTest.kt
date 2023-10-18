@@ -1,4 +1,4 @@
-package com.example.demo.core.member
+package com.example.demo.infrastructure.persistence
 
 import com.example.demo.core.member.domain.Member
 import com.example.demo.createMember
