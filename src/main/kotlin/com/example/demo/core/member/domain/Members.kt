@@ -6,5 +6,5 @@ object Members : LongIdTable(
     name = "member",
     columnName = "member_id",
 ) {
-    val member = varchar(name = "member_name", length = 64)
+    val name = varchar(name = "member_name", length = 64)
 }
