@@ -2,19 +2,24 @@ package com.example.demo.core.member
 
 import com.example.demo.core.member.domain.Member
 import com.example.demo.createMember
+import com.example.demo.infrastructure.persistence.member.MemberExposedRepository
 import com.example.demo.infrastructure.persistence.member.MemberJdbcRepository
 import com.example.demo.infrastructure.persistence.member.MemberJpaRepository
 import io.kotest.core.annotation.DisplayName
 import io.kotest.core.spec.style.FunSpec
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
+import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.jdbc.core.JdbcTemplate
+import org.springframework.test.context.ActiveProfiles
 
-@DataJpaTest
+@ActiveProfiles("test")
+@SpringBootTest
 @DisplayName("SaveMassMemberDataTest")
 class SaveMassMemberDataTest(
     private val jdbcTemplate: JdbcTemplate,
     private val memberJpaRepository: MemberJpaRepository,
     private val memberJdbcRepository: MemberJdbcRepository = MemberJdbcRepository(jdbcTemplate = jdbcTemplate),
+    private val memberExposedRepository: MemberExposedRepository,
 ) : FunSpec({
 
     val count = 1_000
@@ -41,5 +46,14 @@ class SaveMassMemberDataTest(
         }
 
         memberJdbcRepository.saveAll(members)
+    }
+
+    test("1000명의 회원 데이터를 Exposed batchInsert()로 저장했을 때") {
+        val members: MutableList<Member> = mutableListOf()
+        for (i in 1 .. count) {
+            members.add(createMember())
+        }
+
+        memberExposedRepository.saveAll(members)
     }
 })
