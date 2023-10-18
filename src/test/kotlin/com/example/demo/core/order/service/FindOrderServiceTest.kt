@@ -1,8 +1,8 @@
 package com.example.demo.core.order.service
 
 import com.example.demo.core.order.domain.Order
-import com.example.demo.infrastructure.persistence.order.OrderRepository
 import com.example.demo.createOrder
+import com.example.demo.infrastructure.persistence.order.OrderRepository
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.annotation.DisplayName
 import io.kotest.core.spec.style.DescribeSpec
@@ -41,4 +41,4 @@ class FindOrderServiceTest(
             }
         }
     }
-})
+},)

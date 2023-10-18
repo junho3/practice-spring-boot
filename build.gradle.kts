@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     id("org.springframework.boot") version "2.7.13"
     id("io.spring.dependency-management") version "1.0.15.RELEASE"
-    id("org.jlleitschuh.gradle.ktlint") version "11.0.0"
+    id("org.jlleitschuh.gradle.ktlint") version "11.6.1"
     id("java-test-fixtures")
 
     kotlin("jvm") version "1.6.21"
@@ -31,6 +31,12 @@ dependencies {
 
     /** JPA */
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+
+    /** Exposed */
+    implementation("org.jetbrains.exposed:exposed-core:0.44.0")
+    implementation("org.jetbrains.exposed:exposed-dao:0.44.0")
+    implementation("org.jetbrains.exposed:exposed-jdbc:0.44.0")
+    implementation("org.jetbrains.exposed:exposed-java-time:0.44.0")
 
     runtimeOnly("com.h2database:h2")
 

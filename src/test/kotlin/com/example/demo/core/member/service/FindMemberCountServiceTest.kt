@@ -1,9 +1,9 @@
 package com.example.demo.core.member.service
 
 import com.example.demo.core.member.domain.Member
-import com.example.demo.infrastructure.persistence.member.MemberRepository
 import com.example.demo.createMember
 import com.example.demo.infrastructure.persistence.member.MemberJpaRepository
+import com.example.demo.infrastructure.persistence.member.MemberRepository
 import io.kotest.core.annotation.DisplayName
 import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.matchers.shouldBe
@@ -38,4 +38,4 @@ class FindMemberCountServiceTest(
             }
         }
     }
-})
+},)
