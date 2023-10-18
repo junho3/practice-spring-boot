@@ -23,7 +23,7 @@ class MemberJdbcRepository(
                 override fun getBatchSize(): Int {
                     return members.size
                 }
-            }
+            },
         )
     }
 }

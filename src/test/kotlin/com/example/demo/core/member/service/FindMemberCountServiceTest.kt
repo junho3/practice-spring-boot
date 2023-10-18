@@ -15,7 +15,7 @@ class FindMemberCountServiceTest(
     private val memberRepository: MemberRepository,
     private val memberJpaRepository: MemberJpaRepository,
     private val memberCountService: FindMemberCountService = FindMemberCountService(
-        memberRepository = memberRepository
+        memberRepository = memberRepository,
     ),
 ) : DescribeSpec({
 
@@ -38,4 +38,4 @@ class FindMemberCountServiceTest(
             }
         }
     }
-})
+},)

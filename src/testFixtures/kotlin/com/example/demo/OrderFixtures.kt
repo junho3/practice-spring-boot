@@ -19,6 +19,6 @@ fun createOrderProduct(
     return OrderProduct(
         name = name,
         quantity = quantity,
-        order = order
+        order = order,
     )
 }
