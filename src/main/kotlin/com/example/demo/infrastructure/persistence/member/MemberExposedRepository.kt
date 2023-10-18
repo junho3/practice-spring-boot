@@ -15,7 +15,7 @@ class MemberExposedRepository {
             Members.batchInsert(
                 data = members,
                 ignore = false,
-                shouldReturnGeneratedValues = false,
+                shouldReturnGeneratedValues = false
             ) {
                 this[Members.name] = it.name
             }

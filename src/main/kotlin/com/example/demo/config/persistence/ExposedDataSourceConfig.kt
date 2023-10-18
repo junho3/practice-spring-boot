@@ -23,7 +23,7 @@ class ExposedDataSourceConfig(
             url = jdbcUrl,
             driver = driverClassName,
             user = userName,
-            password = password,
+            password = password
         )
     }
 }

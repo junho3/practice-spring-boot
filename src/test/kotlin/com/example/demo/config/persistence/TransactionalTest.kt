@@ -19,7 +19,7 @@ import org.springframework.test.context.ActiveProfiles
 class TransactionalTest(
     private val orderRepository: OrderRepository,
     private val findOrderService: FindOrderService = FindOrderService(
-        orderRepository = orderRepository,
+        orderRepository = orderRepository
     ),
 ) : DescribeSpec({
 
@@ -53,4 +53,4 @@ class TransactionalTest(
             }
         }
     }
-},)
+})

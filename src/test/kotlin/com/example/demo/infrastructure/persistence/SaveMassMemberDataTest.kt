@@ -53,4 +53,4 @@ class SaveMassMemberDataTest(
 
         memberExposedRepository.saveAll(members)
     }
-},)
+})

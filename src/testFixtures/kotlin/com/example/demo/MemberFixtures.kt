@@ -8,6 +8,6 @@ fun createMember(
 ): Member {
     return Member(
         id = id,
-        name = name,
+        name = name
     )
 }
