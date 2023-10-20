@@ -46,6 +46,7 @@ dependencies {
     testImplementation("io.kotest.extensions:kotest-extensions-spring:1.1.2")
     testImplementation("com.h2database:h2")
     testImplementation("io.mockk:mockk:1.13.2")
+    testImplementation("com.tngtech.archunit:archunit-junit5:1.1.0")
 
     allOpen {
         annotation("javax.persistence.Entity")
