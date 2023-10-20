@@ -10,8 +10,9 @@ import org.springframework.stereotype.Service
 class NamingConventionTest {
 
     @ArchTest
-    val servicesShouldBeSuffixed: ArchRule = ArchRuleDefinition.classes()
-        .that().resideInAPackage("..service..")
-        .and().areAnnotatedWith(Service::class.java)
-        .should().haveSimpleNameEndingWith("Service")
+    val servicesShouldBeSuffixed: ArchRule =
+        ArchRuleDefinition.classes()
+            .that().resideInAPackage("..service..")
+            .and().areAnnotatedWith(Service::class.java)
+            .should().haveSimpleNameEndingWith("Service")
 }
