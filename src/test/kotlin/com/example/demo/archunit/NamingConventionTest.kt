@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service
 
 @AnalyzeClasses(packages = ["com.example.demo"])
 class NamingConventionTest {
-
     @ArchTest
     val servicesShouldBeSuffixed: ArchRule =
         ArchRuleDefinition.classes()
