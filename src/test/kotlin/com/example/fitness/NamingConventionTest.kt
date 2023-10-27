@@ -1,4 +1,4 @@
-package com.example.demo.archunit
+package com.example.fitness
 
 import com.tngtech.archunit.junit.AnalyzeClasses
 import com.tngtech.archunit.junit.ArchTest
