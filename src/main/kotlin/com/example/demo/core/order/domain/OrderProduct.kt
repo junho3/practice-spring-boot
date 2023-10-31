@@ -15,10 +15,8 @@ import jakarta.persistence.Table
 class OrderProduct(
     @Column(name = "order_product_name")
     val name: String,
-
     @Column(name = "order_product_quantity")
     val quantity: Long,
-
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "order_id")
     val order: Order,

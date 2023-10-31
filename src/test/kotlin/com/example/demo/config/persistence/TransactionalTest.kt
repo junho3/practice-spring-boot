@@ -18,9 +18,10 @@ import org.springframework.test.context.ActiveProfiles
 @DisplayName("TransactionalTest")
 class TransactionalTest(
     private val orderRepository: OrderRepository,
-    private val findOrderService: FindOrderService = FindOrderService(
-        orderRepository = orderRepository,
-    ),
+    private val findOrderService: FindOrderService =
+        FindOrderService(
+            orderRepository = orderRepository,
+        ),
 ) : DescribeSpec({
 
     beforeSpec {

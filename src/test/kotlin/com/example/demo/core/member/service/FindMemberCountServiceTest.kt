@@ -14,9 +14,10 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 class FindMemberCountServiceTest(
     private val memberRepository: MemberRepository,
     private val memberJpaRepository: MemberJpaRepository,
-    private val memberCountService: FindMemberCountService = FindMemberCountService(
-        memberRepository = memberRepository,
-    ),
+    private val memberCountService: FindMemberCountService =
+        FindMemberCountService(
+            memberRepository = memberRepository,
+        ),
 ) : DescribeSpec({
 
     beforeSpec { memberJpaRepository.deleteAll() }

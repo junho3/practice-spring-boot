@@ -16,7 +16,6 @@ class ExposedDataSourceConfig(
     @Value("\${spring.datasource.writer.password}")
     private val password: String,
 ) {
-
     @Bean
     fun exposedDataSource(): Database {
         return Database.connect(

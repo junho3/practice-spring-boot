@@ -13,9 +13,10 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 @DisplayName(name = "FindOrderService")
 class FindOrderServiceTest(
     private val orderRepository: OrderRepository,
-    private val findOrderService: FindOrderService = FindOrderService(
-        orderRepository = orderRepository,
-    ),
+    private val findOrderService: FindOrderService =
+        FindOrderService(
+            orderRepository = orderRepository,
+        ),
 ) : DescribeSpec({
 
     beforeSpec {

@@ -14,7 +14,6 @@ class Member(
     @Column(name = "member_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
-
     @Column(name = "member_name")
     val name: String,
 )
