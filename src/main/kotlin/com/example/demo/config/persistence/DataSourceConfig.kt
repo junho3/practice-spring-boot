@@ -14,7 +14,6 @@ import javax.sql.DataSource
 
 @Configuration
 class DataSourceConfig {
-
     /**
      * 읽기 전용 DB properties 내용을 파싱하여 리턴.
      *
@@ -48,15 +47,17 @@ class DataSourceConfig {
         val writeDataSource: DataSource = createDataSource(writeDataSourceProperties())
         val readDataSource: DataSource = createDataSource(readDataSourceProperties())
 
-        val dataSourceMap = HashMap<Any, Any>().also {
-            it[DataSourceType.WRITE] = writeDataSource
-            it[DataSourceType.READ] = readDataSource
-        }
+        val dataSourceMap =
+            HashMap<Any, Any>().also {
+                it[DataSourceType.WRITE] = writeDataSource
+                it[DataSourceType.READ] = readDataSource
+            }
 
-        val routingDataSource = DynamicRoutingDataSource().also {
-            it.setTargetDataSources(dataSourceMap)
-            it.setDefaultTargetDataSource(writeDataSource)
-        }
+        val routingDataSource =
+            DynamicRoutingDataSource().also {
+                it.setTargetDataSources(dataSourceMap)
+                it.setDefaultTargetDataSource(writeDataSource)
+            }
 
         return routingDataSource
     }
@@ -88,7 +89,6 @@ class DataSourceConfig {
  * 동적으로 여러 DataSource 중 하나로 연결.
  */
 class DynamicRoutingDataSource : AbstractRoutingDataSource() {
-
     /**
      * Lookup Key를 반환하여 Lookup Key에 대응하는 DataSource를 사용하도록 연결한다.
      */
@@ -96,8 +96,9 @@ class DynamicRoutingDataSource : AbstractRoutingDataSource() {
         return if (isTransaction()) DataSourceType.WRITE else DataSourceType.READ
     }
 
-    private fun isTransaction() = TransactionSynchronizationManager.isActualTransactionActive() &&
-        !TransactionSynchronizationManager.isCurrentTransactionReadOnly()
+    private fun isTransaction() =
+        TransactionSynchronizationManager.isActualTransactionActive() &&
+            !TransactionSynchronizationManager.isCurrentTransactionReadOnly()
 }
 
 /**

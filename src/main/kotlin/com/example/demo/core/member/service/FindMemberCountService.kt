@@ -11,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional
 class FindMemberCountService(
     private val memberRepository: MemberRepository,
 ) {
-
     fun getMemberCountByChunk(chunkSize: Int): Int {
         var page = 0
         var count = 0

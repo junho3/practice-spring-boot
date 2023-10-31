@@ -16,7 +16,10 @@ class MemberJdbcRepository(
             "insert into member (member_name) values (?)",
             object : BatchPreparedStatementSetter {
                 @Throws(SQLException::class)
-                override fun setValues(ps: PreparedStatement, i: Int) {
+                override fun setValues(
+                    ps: PreparedStatement,
+                    i: Int,
+                ) {
                     ps.setString(1, members[i].name)
                 }
 

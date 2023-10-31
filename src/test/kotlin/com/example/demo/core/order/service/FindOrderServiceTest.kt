@@ -13,32 +13,33 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 @DisplayName(name = "FindOrderService")
 class FindOrderServiceTest(
     private val orderRepository: OrderRepository,
-    private val findOrderService: FindOrderService = FindOrderService(
-        orderRepository = orderRepository,
-    ),
+    private val findOrderService: FindOrderService =
+        FindOrderService(
+            orderRepository = orderRepository,
+        ),
 ) : DescribeSpec({
 
-    beforeSpec {
-        orderRepository.deleteAll()
-    }
-
-    describe("findById 메소드는") {
-        context("주문 데이터가 존재하면") {
-            orderRepository.save(createOrder())
-
-            it("Order 객체를 리턴한다.") {
-                val result = findOrderService.findById(1)
-
-                result.shouldBeInstanceOf<Order>()
-            }
+        beforeSpec {
+            orderRepository.deleteAll()
         }
 
-        context("주문 데이터가 존재하지 않으면") {
-            it("IllegalArgumentException을 던진다.") {
-                val exception = shouldThrow<IllegalArgumentException> { findOrderService.findById(2) }
+        describe("findById 메소드는") {
+            context("주문 데이터가 존재하면") {
+                orderRepository.save(createOrder())
 
-                exception.shouldBeInstanceOf<IllegalArgumentException>()
+                it("Order 객체를 리턴한다.") {
+                    val result = findOrderService.findById(1)
+
+                    result.shouldBeInstanceOf<Order>()
+                }
+            }
+
+            context("주문 데이터가 존재하지 않으면") {
+                it("IllegalArgumentException을 던진다.") {
+                    val exception = shouldThrow<IllegalArgumentException> { findOrderService.findById(2) }
+
+                    exception.shouldBeInstanceOf<IllegalArgumentException>()
+                }
             }
         }
-    }
-},)
+    })

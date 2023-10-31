@@ -19,4 +19,4 @@ internal class CeilTest : FunSpec({
 
         actual shouldBe -4
     }
-},)
+})

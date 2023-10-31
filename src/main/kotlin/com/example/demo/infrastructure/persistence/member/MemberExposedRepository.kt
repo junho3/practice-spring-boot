@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository
 
 @Repository
 class MemberExposedRepository {
-
     // Jpa 엔티티를 사용하는 것이 마음에 들지 않지만, 우선은 Jpa 엔티티를 파라미터로 받아서 처리
     fun saveAll(members: List<Member>) {
         transaction {

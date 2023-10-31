@@ -11,9 +11,12 @@ class FindOrderController(
     private val findOrderService: FindOrderService,
 ) {
     @GetMapping("/v1/orders/{id}")
-    fun findById(@PathVariable("id") id: Long): ApiResponse<FindOrderResponse> {
-        val data = findOrderService.findById(id)
-            .let { FindOrderResponse.from(it) }
+    fun findById(
+        @PathVariable("id") id: Long,
+    ): ApiResponse<FindOrderResponse> {
+        val data =
+            findOrderService.findById(id)
+                .let { FindOrderResponse.from(it) }
 
         return ApiResponse.success(data)
     }

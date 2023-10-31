@@ -19,38 +19,38 @@ class SaveMassMemberDataTest(
     private val memberExposedRepository: MemberExposedRepository,
 ) : FunSpec({
 
-    val count = 1_000
+        val count = 1_000
 
-    test("1000명의 회원 데이터를 Jpa Save()로 저장했을 때") {
-        for (i in 1..count) {
-            memberJpaRepository.save(createMember())
-        }
-    }
-
-    test("1000명의 회원 데이터를 Jpa SaveAll()로 저장했을 때") {
-        val members: MutableList<Member> = mutableListOf()
-        for (i in 1..count) {
-            members.add(createMember())
+        test("1000명의 회원 데이터를 Jpa Save()로 저장했을 때") {
+            for (i in 1..count) {
+                memberJpaRepository.save(createMember())
+            }
         }
 
-        memberJpaRepository.saveAll(members)
-    }
+        test("1000명의 회원 데이터를 Jpa SaveAll()로 저장했을 때") {
+            val members: MutableList<Member> = mutableListOf()
+            for (i in 1..count) {
+                members.add(createMember())
+            }
 
-    test("1000명의 회원 데이터를 JdbcTemplate으로 저장했을 때") {
-        val members: MutableList<Member> = mutableListOf()
-        for (i in 1..count) {
-            members.add(createMember())
+            memberJpaRepository.saveAll(members)
         }
 
-        memberJdbcRepository.saveAll(members)
-    }
+        test("1000명의 회원 데이터를 JdbcTemplate으로 저장했을 때") {
+            val members: MutableList<Member> = mutableListOf()
+            for (i in 1..count) {
+                members.add(createMember())
+            }
 
-    test("1000명의 회원 데이터를 Exposed batchInsert()로 저장했을 때") {
-        val members: MutableList<Member> = mutableListOf()
-        for (i in 1..count) {
-            members.add(createMember())
+            memberJdbcRepository.saveAll(members)
         }
 
-        memberExposedRepository.saveAll(members)
-    }
-},)
+        test("1000명의 회원 데이터를 Exposed batchInsert()로 저장했을 때") {
+            val members: MutableList<Member> = mutableListOf()
+            for (i in 1..count) {
+                members.add(createMember())
+            }
+
+            memberExposedRepository.saveAll(members)
+        }
+    })
