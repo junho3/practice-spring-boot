@@ -6,7 +6,7 @@ import com.example.demo.core.order.domain.OrderProduct
 data class FindOrderResponse(
     val id: Long,
     val memberName: String,
-    val products: List<Product>
+    val products: List<Product>,
 ) {
     data class Product(
         val id: Long,
