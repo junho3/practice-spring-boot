@@ -15,4 +15,4 @@ internal class MembersTest : FunSpec({
             exposedProperties.any { it == property } shouldBe true
         }
     }
-})
+},)

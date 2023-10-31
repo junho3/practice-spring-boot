@@ -19,4 +19,4 @@ internal class FloorTest : FunSpec({
 
         actual shouldBe -5
     }
-})
+},)
