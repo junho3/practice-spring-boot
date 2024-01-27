@@ -1,5 +1,6 @@
 package com.example.demo.core.order.service
 
+import com.example.demo.PersistenceDataJpaTest
 import com.example.demo.core.order.domain.Order
 import com.example.demo.createOrder
 import com.example.demo.infrastructure.persistence.order.OrderRepository
@@ -7,11 +8,10 @@ import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.annotation.DisplayName
 import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.matchers.types.shouldBeInstanceOf
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 
-@DataJpaTest
+@PersistenceDataJpaTest
 @DisplayName(name = "FindOrderService")
-class FindOrderServiceTest(
+internal class FindOrderServiceTest(
     private val orderRepository: OrderRepository,
     private val findOrderService: FindOrderService =
         FindOrderService(
