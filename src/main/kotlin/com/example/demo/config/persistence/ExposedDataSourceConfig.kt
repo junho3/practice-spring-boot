@@ -10,6 +10,8 @@ class ExposedDataSourceConfig(
     private val driverClassName: String,
     @Value("\${spring.datasource.writer.jdbc-url}")
     private val writerJdbcUrl: String,
+    @Value("\${spring.datasource.reader.jdbc-url}")
+    private val readerJdbcUrl: String,
     @Value("\${spring.datasource.writer.username}")
     private val userName: String,
     @Value("\${spring.datasource.writer.password}")
@@ -24,7 +26,20 @@ class ExposedDataSourceConfig(
         )
     }
 
+    private val readDatabase: Database by lazy {
+        Database.connect(
+            url = readerJdbcUrl,
+            driver = driverClassName,
+            user = userName,
+            password = password,
+        )
+    }
+
     fun write(): Database {
         return writeDatabase
+    }
+
+    fun read(): Database {
+        return readDatabase
     }
 }
