@@ -1,5 +1,6 @@
 package com.example.demo.core.member.service
 
+import com.example.demo.PersistenceDataJpaTest
 import com.example.demo.core.member.domain.Member
 import com.example.demo.createMember
 import com.example.demo.infrastructure.persistence.member.MemberJpaRepository
@@ -9,9 +10,9 @@ import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.matchers.shouldBe
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 
-@DataJpaTest
+@PersistenceDataJpaTest
 @DisplayName("FindMemberCountService")
-class FindMemberCountServiceTest(
+internal class FindMemberCountServiceTest(
     private val memberRepository: MemberRepository,
     private val memberJpaRepository: MemberJpaRepository,
     private val memberCountService: FindMemberCountService =
