@@ -1,5 +1,6 @@
 package com.example.demo.infrastructure.persistence
 
+import com.example.demo.IntegrationTest
 import com.example.demo.core.member.domain.Member
 import com.example.demo.createMember
 import com.example.demo.infrastructure.persistence.member.MemberExposedRepository
@@ -10,10 +11,9 @@ import io.kotest.core.spec.style.FunSpec
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.ActiveProfiles
 
-@ActiveProfiles("test")
-@SpringBootTest
+@IntegrationTest
 @DisplayName("SaveMassMemberDataTest")
-class SaveMassMemberDataTest(
+internal class SaveMassMemberDataTest(
     private val memberJpaRepository: MemberJpaRepository,
     private val memberJdbcRepository: MemberJdbcRepository,
     private val memberExposedRepository: MemberExposedRepository,
