@@ -1,5 +1,6 @@
 package com.example.demo.config.persistence
 
+import com.example.demo.IntegrationTest
 import com.example.demo.core.order.domain.Order
 import com.example.demo.core.order.service.FindOrderService
 import com.example.demo.createOrder
@@ -10,11 +11,8 @@ import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.matchers.shouldBe
 import io.kotest.matchers.types.shouldBeInstanceOf
 import org.hibernate.LazyInitializationException
-import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.test.context.ActiveProfiles
 
-@ActiveProfiles("test")
-@SpringBootTest
+@IntegrationTest
 @DisplayName("TransactionalTest")
 class TransactionalTest(
     private val orderRepository: OrderRepository,
