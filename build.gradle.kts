@@ -11,6 +11,7 @@ plugins {
     kotlin("plugin.jpa") version "1.8.22"
     kotlin("plugin.allopen") version "1.8.22"
     kotlin("plugin.noarg") version "1.8.22"
+    kotlin("kapt") version "1.8.21"
 }
 
 group = "com.example"
@@ -39,6 +40,12 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-dao:0.44.0")
     implementation("org.jetbrains.exposed:exposed-jdbc:0.44.0")
     implementation("org.jetbrains.exposed:exposed-java-time:0.44.0")
+
+    /** Querydsl */
+    implementation ("com.querydsl:querydsl-jpa:5.0.0:jakarta")
+    kapt ("com.querydsl:querydsl-apt:5.0.0:jakarta")
+    kapt ("jakarta.annotation:jakarta.annotation-api")
+    kapt ("jakarta.persistence:jakarta.persistence-api")
 
     runtimeOnly("com.h2database:h2")
 
