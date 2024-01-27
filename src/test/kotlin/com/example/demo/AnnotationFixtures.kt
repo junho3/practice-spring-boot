@@ -34,4 +34,4 @@ annotation class PersistenceExposedTest
 @Retention(AnnotationRetention.RUNTIME)
 @SpringBootTest
 @TestEnvironment
-annotation class IntegrationText
+annotation class IntegrationTest
