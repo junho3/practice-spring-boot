@@ -9,7 +9,6 @@ import jakarta.persistence.EntityTransaction
 import org.springframework.beans.factory.annotation.Autowired
 
 abstract class PersistenceTestSupport(body: DescribeSpec.() -> Unit = {}) : DescribeSpec(body) {
-
     override fun extensions() = listOf(SpringExtension)
 
     @Autowired
