@@ -3,6 +3,7 @@ package com.example.demo
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.context.annotation.Import
 import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.context.TestConstructor
 
@@ -18,12 +19,14 @@ annotation class TestEnvironment
 @AutoConfigureMockMvc
 annotation class RestDocsTest
 
+@Import(value = [QuerydslTestConfig::class])
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.RUNTIME)
 @DataJpaTest
 @TestEnvironment
 annotation class PersistenceDataJpaTest
 
+@Import(value = [QuerydslTestConfig::class])
 @Target(AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.RUNTIME)
 @SpringBootTest
