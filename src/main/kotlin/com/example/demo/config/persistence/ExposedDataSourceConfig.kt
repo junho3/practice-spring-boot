@@ -24,4 +24,8 @@ class ExposedDataSourceConfig(
             password = password,
         )
     }
+
+    fun write(): Database {
+        return writeDatabase
+    }
 }
