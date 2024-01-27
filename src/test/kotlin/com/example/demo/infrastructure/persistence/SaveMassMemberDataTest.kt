@@ -8,8 +8,6 @@ import com.example.demo.infrastructure.persistence.member.MemberJdbcRepository
 import com.example.demo.infrastructure.persistence.member.MemberJpaRepository
 import io.kotest.core.annotation.DisplayName
 import io.kotest.core.spec.style.FunSpec
-import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.test.context.ActiveProfiles
 
 @IntegrationTest
 @DisplayName("SaveMassMemberDataTest")

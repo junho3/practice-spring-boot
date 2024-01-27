@@ -8,7 +8,6 @@ import com.example.demo.infrastructure.persistence.member.MemberRepository
 import io.kotest.core.annotation.DisplayName
 import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.matchers.shouldBe
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 
 @PersistenceDataJpaTest
 @DisplayName("FindMemberCountService")
