@@ -1,21 +1,24 @@
 package com.example.etc
 
+import io.kotest.core.annotation.DisplayName
 import io.kotest.core.spec.style.FunSpec
 import java.time.LocalDate
 import java.time.YearMonth
 import java.time.format.DateTimeFormatter
 
+@DisplayName("YearAndMonthTest")
 internal class YearAndMonthTest : FunSpec({
 
-    test("년월만 주어졌을 때 LocalDate 변환 테스트") {
+    test("문자열 타입의 년월만 주어졌을 때 LocalDate 변환 테스트") {
         val yyMM = "202405"
         val formatter = DateTimeFormatter.ofPattern("yyyyMM")
-        val date = YearMonth.parse(yyMM, formatter)
+        val yearMonth = YearMonth.parse(yyMM, formatter)
 
-        val firstDay: LocalDate = date.atDay(1)
-        val lastDay: LocalDate = date.atEndOfMonth()
+        val firstDay: LocalDate = yearMonth.atDay(1)
+        val lastDay: LocalDate = yearMonth.atEndOfMonth()
 
-
-        println(date)
+        println(yearMonth)
+        println(firstDay)
+        println(lastDay)
     }
 })
