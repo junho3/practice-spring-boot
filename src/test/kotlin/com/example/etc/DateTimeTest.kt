@@ -4,6 +4,7 @@ import io.kotest.core.annotation.DisplayName
 import io.kotest.core.spec.style.FunSpec
 import java.time.LocalDate
 import java.time.LocalDateTime
+import java.time.LocalTime
 import java.time.YearMonth
 import java.time.format.DateTimeFormatter
 
@@ -26,8 +27,10 @@ internal class DateTimeTest : FunSpec({
     test("LocalDateTime.MAX, LocalDate.now().atTime(23,59,59) 비교 테스트") {
         val max = LocalDateTime.MAX
         val atTime = LocalDate.now().atTime(23,59,59)
+        val atTimeMax = LocalDate.now().atTime(LocalTime.MAX)
 
         println(max)
         println(atTime)
+        println(atTimeMax)
     }
 })
