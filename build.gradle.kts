@@ -6,12 +6,12 @@ plugins {
     id("org.jlleitschuh.gradle.ktlint") version "11.6.1"
     id("java-test-fixtures")
 
-    kotlin("jvm") version "1.8.22"
-    kotlin("plugin.spring") version "1.8.22"
-    kotlin("plugin.jpa") version "1.8.22"
-    kotlin("plugin.allopen") version "1.8.22"
-    kotlin("plugin.noarg") version "1.8.22"
-    kotlin("kapt") version "1.8.21"
+    kotlin("jvm") version "1.9.24"
+    kotlin("plugin.spring") version "1.9.24"
+    kotlin("plugin.jpa") version "1.9.24"
+    kotlin("plugin.allopen") version "1.9.24"
+    kotlin("plugin.noarg") version "1.9.24"
+    kotlin("kapt") version "1.9.24"
 }
 
 group = "com.example"
