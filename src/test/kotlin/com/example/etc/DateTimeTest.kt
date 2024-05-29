@@ -26,7 +26,7 @@ internal class DateTimeTest : FunSpec({
 
     test("LocalDateTime.MAX, LocalDate.now().atTime(23,59,59) 비교 테스트") {
         val max = LocalDateTime.MAX
-        val atTime = LocalDate.now().atTime(23,59,59)
+        val atTime = LocalDate.now().atTime(23, 59, 59)
         val atTimeMax = LocalDate.now().atTime(LocalTime.MAX)
 
         println(max)

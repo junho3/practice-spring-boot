@@ -25,10 +25,13 @@ internal class OpenAndAbstractPropertyTest : FunSpec({
 
 // 추상 클래스 정의
 abstract class Food(
-    val name1: String,         // name1: 비추상 프로퍼티
-    open val name2: String,    // name2: 추상 프로퍼티, 오버라이드 가능
+    // name1: 비추상 프로퍼티
+    val name1: String,
+    // name2: 추상 프로퍼티, 오버라이드 가능
+    open val name2: String,
 ) {
-    abstract val name3: String  // name3: 추상 프로퍼티, 반드시 오버라이드 필요
+    // name3: 추상 프로퍼티, 반드시 오버라이드 필요
+    abstract val name3: String
 }
 
 // 구현 클래스1
@@ -41,4 +44,4 @@ class Fruit(name1: String, override val name2: String) : Food("Yellow", "Fruit")
     override val name3: String = "Healthy Fruit"
 }
 
-class Cake(name1: String, override val name2: String, override val name3: String): Food(name1, name2)
+class Cake(name1: String, override val name2: String, override val name3: String) : Food(name1, name2)
