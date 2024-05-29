@@ -21,7 +21,7 @@ internal class OpenAndAbstractPropertyTest : FunSpec({
         println(castedPizza.name2)
         println(castedPizza.name3)
     }
-},)
+})
 
 // 추상 클래스 정의
 abstract class Food(
