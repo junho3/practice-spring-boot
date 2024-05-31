@@ -20,23 +20,23 @@ internal class FindMemberCountServiceTest(
         ),
 ) : DescribeSpec({
 
-    beforeSpec { memberJpaRepository.deleteAll() }
+        beforeSpec { memberJpaRepository.deleteAll() }
 
-    describe("getMemberCountByChunk 메소드는") {
-        context("1000명의 회원이 존재했을 때") {
-            val count = 1_000
-            val members: MutableList<Member> = mutableListOf()
-            for (i in 1..count) {
-                members.add(createMember())
-            }
+        describe("getMemberCountByChunk 메소드는") {
+            context("1000명의 회원이 존재했을 때") {
+                val count = 1_000
+                val members: MutableList<Member> = mutableListOf()
+                for (i in 1..count) {
+                    members.add(createMember())
+                }
 
-            memberJpaRepository.saveAll(members)
+                memberJpaRepository.saveAll(members)
 
-            it("전체회원 수 1000을 리턴한다.") {
-                val result = memberCountService.getMemberCountByChunk(10)
+                it("전체회원 수 1000을 리턴한다.") {
+                    val result = memberCountService.getMemberCountByChunk(10)
 
-                result shouldBe count
+                    result shouldBe count
+                }
             }
         }
-    }
-},)
+    })

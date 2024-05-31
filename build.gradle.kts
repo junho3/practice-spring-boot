@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     id("org.springframework.boot") version "3.3.0"
     id("io.spring.dependency-management") version "1.1.5"
-    id("org.jlleitschuh.gradle.ktlint") version "11.6.1"
+    id("org.jlleitschuh.gradle.ktlint") version "12.1.1"
     id("java-test-fixtures")
 
     kotlin("jvm") version "1.9.24"
@@ -56,6 +56,8 @@ dependencies {
     testImplementation("com.h2database:h2")
     testImplementation("io.mockk:mockk:1.13.11")
     testImplementation("com.tngtech.archunit:archunit-junit5:1.1.0")
+
+    testFixturesImplementation("com.navercorp.fixturemonkey:fixture-monkey-starter-kotlin:1.0.16")
 
     allOpen {
         annotation("javax.persistence.Entity")
