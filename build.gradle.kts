@@ -56,7 +56,7 @@ dependencies {
     testImplementation("com.h2database:h2")
     testImplementation("io.mockk:mockk:1.13.11")
     testImplementation("com.tngtech.archunit:archunit-junit5:1.1.0")
-    testImplementation("com.navercorp.fixturemonkey:fixture-monkey-starter-kotlin:1.0.17")
+    testImplementation("com.navercorp.fixturemonkey:fixture-monkey-starter-kotlin:1.0.16")
 
     allOpen {
         annotation("javax.persistence.Entity")
