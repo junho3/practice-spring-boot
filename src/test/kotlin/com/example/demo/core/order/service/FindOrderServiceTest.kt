@@ -24,7 +24,7 @@ internal class FindOrderServiceTest(
         orderRepository.deleteAll()
     }
 
-    describe("findById 메소드는") {
+    describe("findById()는") {
 
         context("주문 데이터가 존재하면") {
 
@@ -45,8 +45,10 @@ internal class FindOrderServiceTest(
 
         context("주문 데이터가 존재하지 않으면") {
 
+            beforeTest { orderRepository.deleteAll() }
+
             it("IllegalArgumentException을 던진다.") {
-                val exception = shouldThrow<IllegalArgumentException> { findOrderService.findById(2) }
+                val exception = shouldThrow<IllegalArgumentException> { findOrderService.findById(1) }
 
                 exception.shouldBeInstanceOf<IllegalArgumentException>()
             }
