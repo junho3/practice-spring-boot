@@ -20,38 +20,39 @@ internal class FindOrderServiceTest(
         ),
 ) : DescribeSpec({
 
-    beforeSpec {
-        orderRepository.deleteAll()
-    }
-
-    describe("findById()는") {
-
-        context("주문 데이터가 존재하면") {
-
-            beforeTest {
-                val order = FixturesMonkey.fixture()
-                    .giveMeBuilder<Order>()
-                    .sample()
-
-                orderRepository.save(order)
-            }
-
-            it("Order 객체를 리턴한다.") {
-                val result = findOrderService.findById(1)
-
-                result.shouldBeInstanceOf<Order>()
-            }
+        beforeSpec {
+            orderRepository.deleteAll()
         }
 
-        context("주문 데이터가 존재하지 않으면") {
+        describe("findById()는") {
 
-            beforeTest { orderRepository.deleteAll() }
+            context("주문 데이터가 존재하면") {
 
-            it("IllegalArgumentException을 던진다.") {
-                val exception = shouldThrow<IllegalArgumentException> { findOrderService.findById(1) }
+                beforeTest {
+                    val order =
+                        FixturesMonkey.fixture()
+                            .giveMeBuilder<Order>()
+                            .sample()
 
-                exception.shouldBeInstanceOf<IllegalArgumentException>()
+                    orderRepository.save(order)
+                }
+
+                it("Order 객체를 리턴한다.") {
+                    val result = findOrderService.findById(1)
+
+                    result.shouldBeInstanceOf<Order>()
+                }
+            }
+
+            context("주문 데이터가 존재하지 않으면") {
+
+                beforeTest { orderRepository.deleteAll() }
+
+                it("IllegalArgumentException을 던진다.") {
+                    val exception = shouldThrow<IllegalArgumentException> { findOrderService.findById(1) }
+
+                    exception.shouldBeInstanceOf<IllegalArgumentException>()
+                }
             }
         }
-    }
-},)
+    })
