@@ -31,7 +31,7 @@ internal class VariableDeclareAndInitializeTest : FunSpec({
 
     test("Delegates는 변수를 초기화하지 않으면 IllegalStateException을 던진다.") {
         // lateinit var는 기본타입이 불가능하여 delegates로 해야 함
-        var  number by Delegates.notNull<Int>()
+        val number by Delegates.notNull<Int>()
 
         shouldThrow<IllegalStateException> { println(number) }
     }
