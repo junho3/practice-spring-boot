@@ -21,7 +21,7 @@ internal class VariableDeclareAndInitializeTest : FunSpec({
         println(number)
     }
 
-    test("lateinit var는 변수를 초기화하지 않으면 UninitializedPropertyAccessException을 던진다.") {
+    test("lateinit var는 변수를 초기화하지 않으면 UninitializedPropertyAccessException()을 던진다.") {
         // lateinit var는 기본타입 불가능
 //        lateinit var number: Int
         lateinit var text: String
@@ -29,7 +29,7 @@ internal class VariableDeclareAndInitializeTest : FunSpec({
         shouldThrow<UninitializedPropertyAccessException> { println(text) }
     }
 
-    test("Delegates는 변수를 초기화하지 않으면 IllegalStateException을 던진다.") {
+    test("Delegates는 변수를 초기화하지 않으면 IllegalStateException()을 던진다.") {
         // lateinit var는 기본타입이 불가능하여 delegates로 해야 함
         val number by Delegates.notNull<Int>()
 
