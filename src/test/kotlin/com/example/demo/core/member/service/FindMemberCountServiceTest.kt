@@ -23,14 +23,18 @@ internal class FindMemberCountServiceTest(
         beforeSpec { memberJpaRepository.deleteAll() }
 
         describe("getMemberCountByChunk 메소드는") {
-            context("1000명의 회원이 존재했을 때") {
-                val count = 1_000
-                val members: MutableList<Member> = mutableListOf()
-                for (i in 1..count) {
-                    members.add(createMember())
-                }
 
-                memberJpaRepository.saveAll(members)
+            context("1000명의 회원이 존재했을 때") {
+
+                val count = 1_000
+                beforeTest {
+                    val members: MutableList<Member> = mutableListOf()
+                    for (i in 1..count) {
+                        members.add(createMember())
+                    }
+
+                    memberJpaRepository.saveAll(members)
+                }
 
                 it("전체회원 수 1000을 리턴한다.") {
                     val result = memberCountService.getMemberCountByChunk(10)
