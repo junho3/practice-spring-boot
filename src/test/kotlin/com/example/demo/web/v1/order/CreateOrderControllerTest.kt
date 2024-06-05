@@ -58,8 +58,7 @@ internal class CreateOrderControllerTest(
                                                 .description("상품 수량"),
                                         ),
                                 ),
-                            )
-                            .andReturn()
+                            ).andReturn()
                     }
                 }
             }
@@ -102,8 +101,7 @@ internal class CreateOrderControllerTest(
                                                 .description("상품 수량"),
                                         ),
                                 ),
-                            )
-                            .andReturn()
+                            ).andReturn()
                     }
                 }
             }
