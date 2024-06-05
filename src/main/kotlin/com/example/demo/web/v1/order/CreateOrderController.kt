@@ -13,12 +13,26 @@ class CreateOrderController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/v1/orders/response-status")
     fun responseStatus(): ApiResponse<FindOrderResponse> {
-        return ApiResponse.success(FindOrderResponse(id = 1, memberName = "xxx", products = listOf()))
+        return ApiResponse.success(
+            FindOrderResponse(
+                id = 1,
+                memberName = "xxx",
+                products = listOf(FindOrderResponse.Product(id = 1, name = "xxx", quantity = 1)),
+            ),
+        )
     }
 
     @PostMapping("/v1/orders/response-entity")
     fun responseEntity(): ResponseEntity<ApiResponse<FindOrderResponse>> {
         return ResponseEntity.status(HttpStatus.CREATED)
-            .body(ApiResponse.success(FindOrderResponse(id = 1, memberName = "xxx", products = listOf())))
+            .body(
+                ApiResponse.success(
+                    FindOrderResponse(
+                        id = 1,
+                        memberName = "xxx",
+                        products = listOf(FindOrderResponse.Product(id = 1, name = "xxx", quantity = 1)),
+                    ),
+                ),
+            )
     }
 }
