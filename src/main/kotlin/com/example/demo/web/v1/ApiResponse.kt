@@ -16,14 +16,13 @@ data class ApiResponse<E>(
             )
         }
 
-        fun <E> error(errorCode: ErrorCode): ApiResponse<E> {
-            return ApiResponse(
+        fun <E> error(errorCode: ErrorCode): ApiResponse<E> =
+            ApiResponse(
                 success = false,
                 code = errorCode.code,
                 message = errorCode.message,
                 data = null,
             )
-        }
 
         fun <E> error(
             errorCode: ErrorCode,
