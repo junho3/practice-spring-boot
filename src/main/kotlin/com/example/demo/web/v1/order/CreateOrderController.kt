@@ -20,7 +20,6 @@ class CreateOrderController {
             ),
         )
 
-
     @PostMapping("/v1/orders/response-entity")
     fun responseEntity(): ResponseEntity<ApiResponse<FindOrderResponse>> =
         ResponseEntity
