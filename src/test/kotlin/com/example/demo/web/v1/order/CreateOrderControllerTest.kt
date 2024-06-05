@@ -27,7 +27,8 @@ internal class CreateOrderControllerTest(
                     it("201 응답을 리턴한다.") {
                         mockMvc
                             .perform(
-                                RestDocumentationRequestBuilders.post("/v1/orders/response-status")
+                                RestDocumentationRequestBuilders
+                                    .post("/v1/orders/response-status")
                                     .contentType(MediaType.APPLICATION_JSON)
                                     .accept(MediaType.APPLICATION_JSON),
                             ).andExpect(MockMvcResultMatchers.status().isCreated)
@@ -70,7 +71,8 @@ internal class CreateOrderControllerTest(
                     it("201 응답을 리턴한다.") {
                         mockMvc
                             .perform(
-                                RestDocumentationRequestBuilders.post("/v1/orders/response-entity")
+                                RestDocumentationRequestBuilders
+                                    .post("/v1/orders/response-entity")
                                     .contentType(MediaType.APPLICATION_JSON)
                                     .accept(MediaType.APPLICATION_JSON),
                             ).andExpect(MockMvcResultMatchers.status().isCreated)
