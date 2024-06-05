@@ -25,28 +25,35 @@ internal class CreateOrderControllerTest(
                 context("올바른 요청이 들어오면") {
 
                     it("201 응답을 리턴한다.") {
-                        mockMvc.perform(
-                            RestDocumentationRequestBuilders.post("/v1/orders/response-status")
-                                .contentType(MediaType.APPLICATION_JSON)
-                                .accept(MediaType.APPLICATION_JSON),
-                        )
-                            .andExpect(MockMvcResultMatchers.status().isCreated)
+                        mockMvc
+                            .perform(
+                                RestDocumentationRequestBuilders.post("/v1/orders/response-status")
+                                    .contentType(MediaType.APPLICATION_JSON)
+                                    .accept(MediaType.APPLICATION_JSON),
+                            ).andExpect(MockMvcResultMatchers.status().isCreated)
                             .andDo(
                                 MockMvcRestDocumentation.document(
                                     "post/v1/orders/response-status",
-                                    PayloadDocumentation.responseFields(*RestdocsUtils.objectResponse())
+                                    PayloadDocumentation
+                                        .responseFields(*RestdocsUtils.objectResponse())
                                         .and(
-                                            PayloadDocumentation.fieldWithPath("data.id")
+                                            PayloadDocumentation
+                                                .fieldWithPath("data.id")
                                                 .description("주문 id"),
-                                            PayloadDocumentation.fieldWithPath("data.memberName")
+                                            PayloadDocumentation
+                                                .fieldWithPath("data.memberName")
                                                 .description("회원명"),
-                                            PayloadDocumentation.fieldWithPath("data.products[]")
+                                            PayloadDocumentation
+                                                .fieldWithPath("data.products[]")
                                                 .description("상품 목록"),
-                                            PayloadDocumentation.fieldWithPath("data.products[].id")
+                                            PayloadDocumentation
+                                                .fieldWithPath("data.products[].id")
                                                 .description("상품 id"),
-                                            PayloadDocumentation.fieldWithPath("data.products[].name")
+                                            PayloadDocumentation
+                                                .fieldWithPath("data.products[].name")
                                                 .description("상품 이름"),
-                                            PayloadDocumentation.fieldWithPath("data.products[].quantity")
+                                            PayloadDocumentation
+                                                .fieldWithPath("data.products[].quantity")
                                                 .description("상품 수량"),
                                         ),
                                 ),
@@ -61,28 +68,35 @@ internal class CreateOrderControllerTest(
                 context("올바른 요청이 들어오면") {
 
                     it("201 응답을 리턴한다.") {
-                        mockMvc.perform(
-                            RestDocumentationRequestBuilders.post("/v1/orders/response-entity")
-                                .contentType(MediaType.APPLICATION_JSON)
-                                .accept(MediaType.APPLICATION_JSON),
-                        )
-                            .andExpect(MockMvcResultMatchers.status().isCreated)
+                        mockMvc
+                            .perform(
+                                RestDocumentationRequestBuilders.post("/v1/orders/response-entity")
+                                    .contentType(MediaType.APPLICATION_JSON)
+                                    .accept(MediaType.APPLICATION_JSON),
+                            ).andExpect(MockMvcResultMatchers.status().isCreated)
                             .andDo(
                                 MockMvcRestDocumentation.document(
                                     "post/v1/orders/response-entity",
-                                    PayloadDocumentation.responseFields(*RestdocsUtils.objectResponse())
+                                    PayloadDocumentation
+                                        .responseFields(*RestdocsUtils.objectResponse())
                                         .and(
-                                            PayloadDocumentation.fieldWithPath("data.id")
+                                            PayloadDocumentation
+                                                .fieldWithPath("data.id")
                                                 .description("주문 id"),
-                                            PayloadDocumentation.fieldWithPath("data.memberName")
+                                            PayloadDocumentation
+                                                .fieldWithPath("data.memberName")
                                                 .description("회원명"),
-                                            PayloadDocumentation.fieldWithPath("data.products[]")
+                                            PayloadDocumentation
+                                                .fieldWithPath("data.products[]")
                                                 .description("상품 목록"),
-                                            PayloadDocumentation.fieldWithPath("data.products[].id")
+                                            PayloadDocumentation
+                                                .fieldWithPath("data.products[].id")
                                                 .description("상품 id"),
-                                            PayloadDocumentation.fieldWithPath("data.products[].name")
+                                            PayloadDocumentation
+                                                .fieldWithPath("data.products[].name")
                                                 .description("상품 이름"),
-                                            PayloadDocumentation.fieldWithPath("data.products[].quantity")
+                                            PayloadDocumentation
+                                                .fieldWithPath("data.products[].quantity")
                                                 .description("상품 수량"),
                                         ),
                                 ),
