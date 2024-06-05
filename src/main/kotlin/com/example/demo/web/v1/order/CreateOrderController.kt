@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 class CreateOrderController {
-
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/v1/orders/response-status")
     fun responseStatus(): ApiResponse<FindOrderResponse> {

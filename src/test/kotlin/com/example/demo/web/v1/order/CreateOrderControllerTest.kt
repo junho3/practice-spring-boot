@@ -17,79 +17,79 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers
 internal class CreateOrderControllerTest(
     private val mockMvc: MockMvc,
 ) : DescribeSpec(
-    {
-        extensions(SpringExtension)
+        {
+            extensions(SpringExtension)
 
-        describe("responseStatus()") {
+            describe("responseStatus()") {
 
-            context("올바른 요청이 들어오면") {
+                context("올바른 요청이 들어오면") {
 
-                it("201 응답을 리턴한다.") {
-                    mockMvc.perform(
-                        RestDocumentationRequestBuilders.post("/v1/orders/response-status")
-                            .contentType(MediaType.APPLICATION_JSON)
-                            .accept(MediaType.APPLICATION_JSON),
-                    )
-                        .andExpect(MockMvcResultMatchers.status().isCreated)
-                        .andDo(
-                            MockMvcRestDocumentation.document(
-                                "post/v1/orders/response-status",
-                                PayloadDocumentation.responseFields(*RestdocsUtils.objectResponse())
-                                    .and(
-                                        PayloadDocumentation.fieldWithPath("data.id")
-                                            .description("주문 id"),
-                                        PayloadDocumentation.fieldWithPath("data.memberName")
-                                            .description("회원명"),
-                                        PayloadDocumentation.fieldWithPath("data.products[]")
-                                            .description("상품 목록"),
-                                        PayloadDocumentation.fieldWithPath("data.products[].id")
-                                            .description("상품 id"),
-                                        PayloadDocumentation.fieldWithPath("data.products[].name")
-                                            .description("상품 이름"),
-                                        PayloadDocumentation.fieldWithPath("data.products[].quantity")
-                                            .description("상품 수량"),
-                                    ),
-                            ),
+                    it("201 응답을 리턴한다.") {
+                        mockMvc.perform(
+                            RestDocumentationRequestBuilders.post("/v1/orders/response-status")
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .accept(MediaType.APPLICATION_JSON),
                         )
-                        .andReturn()
+                            .andExpect(MockMvcResultMatchers.status().isCreated)
+                            .andDo(
+                                MockMvcRestDocumentation.document(
+                                    "post/v1/orders/response-status",
+                                    PayloadDocumentation.responseFields(*RestdocsUtils.objectResponse())
+                                        .and(
+                                            PayloadDocumentation.fieldWithPath("data.id")
+                                                .description("주문 id"),
+                                            PayloadDocumentation.fieldWithPath("data.memberName")
+                                                .description("회원명"),
+                                            PayloadDocumentation.fieldWithPath("data.products[]")
+                                                .description("상품 목록"),
+                                            PayloadDocumentation.fieldWithPath("data.products[].id")
+                                                .description("상품 id"),
+                                            PayloadDocumentation.fieldWithPath("data.products[].name")
+                                                .description("상품 이름"),
+                                            PayloadDocumentation.fieldWithPath("data.products[].quantity")
+                                                .description("상품 수량"),
+                                        ),
+                                ),
+                            )
+                            .andReturn()
+                    }
                 }
             }
-        }
 
-        describe("responseEntity()는") {
+            describe("responseEntity()는") {
 
-            context("올바른 요청이 들어오면") {
+                context("올바른 요청이 들어오면") {
 
-                it("201 응답을 리턴한다.") {
-                    mockMvc.perform(
-                        RestDocumentationRequestBuilders.post("/v1/orders/response-entity")
-                            .contentType(MediaType.APPLICATION_JSON)
-                            .accept(MediaType.APPLICATION_JSON),
-                    )
-                        .andExpect(MockMvcResultMatchers.status().isCreated)
-                        .andDo(
-                            MockMvcRestDocumentation.document(
-                                "post/v1/orders/response-entity",
-                                PayloadDocumentation.responseFields(*RestdocsUtils.objectResponse())
-                                    .and(
-                                        PayloadDocumentation.fieldWithPath("data.id")
-                                            .description("주문 id"),
-                                        PayloadDocumentation.fieldWithPath("data.memberName")
-                                            .description("회원명"),
-                                        PayloadDocumentation.fieldWithPath("data.products[]")
-                                            .description("상품 목록"),
-                                        PayloadDocumentation.fieldWithPath("data.products[].id")
-                                            .description("상품 id"),
-                                        PayloadDocumentation.fieldWithPath("data.products[].name")
-                                            .description("상품 이름"),
-                                        PayloadDocumentation.fieldWithPath("data.products[].quantity")
-                                            .description("상품 수량"),
-                                    ),
-                            ),
+                    it("201 응답을 리턴한다.") {
+                        mockMvc.perform(
+                            RestDocumentationRequestBuilders.post("/v1/orders/response-entity")
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .accept(MediaType.APPLICATION_JSON),
                         )
-                        .andReturn()
+                            .andExpect(MockMvcResultMatchers.status().isCreated)
+                            .andDo(
+                                MockMvcRestDocumentation.document(
+                                    "post/v1/orders/response-entity",
+                                    PayloadDocumentation.responseFields(*RestdocsUtils.objectResponse())
+                                        .and(
+                                            PayloadDocumentation.fieldWithPath("data.id")
+                                                .description("주문 id"),
+                                            PayloadDocumentation.fieldWithPath("data.memberName")
+                                                .description("회원명"),
+                                            PayloadDocumentation.fieldWithPath("data.products[]")
+                                                .description("상품 목록"),
+                                            PayloadDocumentation.fieldWithPath("data.products[].id")
+                                                .description("상품 id"),
+                                            PayloadDocumentation.fieldWithPath("data.products[].name")
+                                                .description("상품 이름"),
+                                            PayloadDocumentation.fieldWithPath("data.products[].quantity")
+                                                .description("상품 수량"),
+                                        ),
+                                ),
+                            )
+                            .andReturn()
+                    }
                 }
             }
-        }
-    },
-)
+        },
+    )
