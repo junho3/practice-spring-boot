@@ -24,7 +24,8 @@ class CreateOrderController {
 
     @PostMapping("/v1/orders/response-entity")
     fun responseEntity(): ResponseEntity<ApiResponse<FindOrderResponse>> {
-        return ResponseEntity.status(HttpStatus.CREATED)
+        return ResponseEntity
+            .status(HttpStatus.CREATED)
             .body(
                 ApiResponse.success(
                     FindOrderResponse(
