@@ -21,16 +21,19 @@ data class ApiResponse<E>(
                 success = false,
                 code = errorCode.code,
                 message = errorCode.message,
-                data = null
+                data = null,
             )
         }
 
-        fun <E> error(errorCode: ErrorCode, message: String): ApiResponse<E> {
+        fun <E> error(
+            errorCode: ErrorCode,
+            message: String,
+        ): ApiResponse<E> {
             return ApiResponse(
                 success = false,
                 code = errorCode.code,
                 message = message,
-                data = null
+                data = null,
             )
         }
     }

@@ -30,8 +30,8 @@ enum class ErrorCode(
          * @param httpStatusCode Http Status Code
          * @return 공통 오류 코드 객체 code 값
          * */
-        fun of(httpStatusCode: Int): ErrorCode {
-            return when (httpStatusCode) {
+        fun of(httpStatusCode: Int): ErrorCode =
+            when (httpStatusCode) {
                 400 -> BAD_REQUEST
                 401 -> UNAUTHORIZED
                 403 -> FORBIDDEN
@@ -43,6 +43,5 @@ enum class ErrorCode(
                 504 -> GATEWAY_TIMEOUT
                 else -> INTERNAL_SERVER_ERROR
             }
-        }
     }
 }
