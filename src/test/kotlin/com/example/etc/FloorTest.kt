@@ -1,4 +1,4 @@
-package com.example.demo
+package com.example.etc
 
 import io.kotest.core.annotation.DisplayName
 import io.kotest.core.spec.style.FunSpec
