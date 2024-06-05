@@ -28,13 +28,12 @@ data class ApiResponse<E>(
         fun <E> error(
             errorCode: ErrorCode,
             message: String,
-        ): ApiResponse<E> {
-            return ApiResponse(
+        ): ApiResponse<E> =
+            ApiResponse(
                 success = false,
                 code = errorCode.code,
                 message = message,
                 data = null,
             )
-        }
     }
 }
