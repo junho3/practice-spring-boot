@@ -17,10 +17,16 @@ class LayeredArchitectureTest {
     @ArchTest
     val layerDependenciesAreRespected: ArchRule =
         Architectures.layeredArchitecture().consideringAllDependencies()
-            .layer("Controllers").definedBy("com.example.demo.web..")
-            .layer("Services").definedBy("com.example.demo.core..service..")
-            .layer("Persistence").definedBy("com.example.demo.infrastructure.persistence..")
-            .whereLayer("Controllers").mayNotBeAccessedByAnyLayer()
-            .whereLayer("Services").mayOnlyBeAccessedByLayers("Controllers")
-            .whereLayer("Persistence").mayOnlyBeAccessedByLayers("Services")
+            .layer("Controllers")
+            .definedBy("com.example.demo.web..")
+            .layer("Services")
+            .definedBy("com.example.demo.core..service..")
+            .layer("Persistence")
+            .definedBy("com.example.demo.infrastructure.persistence..")
+            .whereLayer("Controllers")
+            .mayNotBeAccessedByAnyLayer()
+            .whereLayer("Services")
+            .mayOnlyBeAccessedByLayers("Controllers")
+            .whereLayer("Persistence")
+            .mayOnlyBeAccessedByLayers("Services")
 }
