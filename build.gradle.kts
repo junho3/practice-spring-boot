@@ -66,7 +66,7 @@ dependencies {
     asciidoctorExtensions("org.springframework.restdocs:spring-restdocs-asciidoctor")
     testImplementation("org.springframework.restdocs:spring-restdocs-mockmvc")
 
-    testFixturesImplementation("com.navercorp.fixturemonkey:fixture-monkey-starter-kotlin:1.0.16")
+    testFixturesImplementation("com.navercorp.fixturemonkey:fixture-monkey-starter-kotlin:1.1.6")
 
     allOpen {
         annotation("javax.persistence.Entity")
