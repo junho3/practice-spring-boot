@@ -30,7 +30,8 @@ internal class FindOrderServiceTest(
 
                 beforeTest {
                     val order =
-                        FixturesMonkey.fixture()
+                        FixturesMonkey
+                            .fixture()
                             .giveMeBuilder<Order>()
                             .sample()
 

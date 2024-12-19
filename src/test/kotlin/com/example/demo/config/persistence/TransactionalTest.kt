@@ -35,12 +35,14 @@ class TransactionalTest(
 
             beforeTest {
                 val order =
-                    FixturesMonkey.fixture()
+                    FixturesMonkey
+                        .fixture()
                         .giveMeBuilder<Order>()
                         .sample()
 
                 (1..10).map {
-                    FixturesMonkey.fixture()
+                    FixturesMonkey
+                        .fixture()
                         .giveMeBuilder<OrderProduct>()
                         .set(OrderProduct::order, Values.just(order))
                         .sample()
