@@ -3,7 +3,6 @@ package com.example.demo.infrastructure.persistence
 import com.example.demo.FixturesMonkey
 import com.example.demo.IntegrationTest
 import com.example.demo.core.member.domain.Member
-import com.example.demo.core.order.domain.Order
 import com.example.demo.infrastructure.persistence.member.MemberExposedRepository
 import com.example.demo.infrastructure.persistence.member.MemberJdbcRepository
 import com.example.demo.infrastructure.persistence.member.MemberJpaRepository
