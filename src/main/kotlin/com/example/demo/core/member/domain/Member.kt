@@ -10,7 +10,7 @@ import jakarta.persistence.Table
 @Entity
 @Table(name = "member")
 class Member(
-    @Column(name = "member_name")
+    @Column(name = "member_name", length = 64)
     val name: String,
 ) {
     @Id
