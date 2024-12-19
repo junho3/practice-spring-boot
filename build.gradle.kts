@@ -59,7 +59,7 @@ dependencies {
     testImplementation("io.kotest:kotest-assertions-core:5.7.2")
     testImplementation("io.kotest.extensions:kotest-extensions-spring:1.1.3")
     testImplementation("com.h2database:h2")
-    testImplementation("io.mockk:mockk:1.13.11")
+    testImplementation("io.mockk:mockk:1.13.13")
     testImplementation("com.tngtech.archunit:archunit-junit5:1.1.0")
 
     /** asciidoc */
