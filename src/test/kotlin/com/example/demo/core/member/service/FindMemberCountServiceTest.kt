@@ -29,11 +29,12 @@ internal class FindMemberCountServiceTest(
             context("1000명의 회원이 존재했을 때") {
 
                 beforeTest {
-                    val members = FixturesMonkey
-                        .fixture()
-                        .giveMeBuilder<Member>()
-                        .set("name", Arbitraries.strings().ofMaxLength(64))
-                        .sampleList(1_000)
+                    val members =
+                        FixturesMonkey
+                            .fixture()
+                            .giveMeBuilder<Member>()
+                            .set("name", Arbitraries.strings().ofMaxLength(64))
+                            .sampleList(1_000)
 
                     memberJpaRepository.saveAll(members)
                 }

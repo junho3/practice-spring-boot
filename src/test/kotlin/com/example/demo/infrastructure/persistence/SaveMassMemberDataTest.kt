@@ -22,10 +22,11 @@ internal class SaveMassMemberDataTest(
 ) : FunSpec({
 
         val count = 1_000
-        val memberFixture = FixturesMonkey
-            .fixture()
-            .giveMeBuilder<Member>()
-            .set("name", Arbitraries.strings().ofMaxLength(64))
+        val memberFixture =
+            FixturesMonkey
+                .fixture()
+                .giveMeBuilder<Member>()
+                .set("name", Arbitraries.strings().ofMaxLength(64))
 
         test("1000명의 회원 데이터를 Jpa Save()로 저장했을 때") {
             for (i in 1..count) {
