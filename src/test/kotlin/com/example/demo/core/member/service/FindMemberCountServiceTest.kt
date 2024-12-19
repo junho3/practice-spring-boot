@@ -9,6 +9,7 @@ import com.navercorp.fixturemonkey.kotlin.giveMeBuilder
 import io.kotest.core.annotation.DisplayName
 import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.matchers.shouldBe
+import net.jqwik.api.Arbitraries
 
 @PersistenceDataJpaTest
 @DisplayName("FindMemberCountService")
@@ -30,15 +31,16 @@ internal class FindMemberCountServiceTest(
                 beforeTest {
                     val members = FixturesMonkey.fixture()
                         .giveMeBuilder<Member>()
+                        .set("name", Arbitraries.strings().ofMaxLength(64))
                         .sampleList(1_000)
 
                     memberJpaRepository.saveAll(members)
                 }
 
                 it("전체회원 수 1000을 리턴한다.") {
-                    val result = memberCountService.getMemberCountByChunk(10)
+                    val actual = memberCountService.getMemberCountByChunk(10)
 
-                    result shouldBe 1_000
+                    actual shouldBe 1_000
                 }
             }
         }
