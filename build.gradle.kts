@@ -7,12 +7,12 @@ plugins {
     id("org.asciidoctor.jvm.convert") version "3.3.2"
     id("java-test-fixtures")
 
-    kotlin("jvm") version "1.9.24"
-    kotlin("plugin.spring") version "1.9.24"
-    kotlin("plugin.jpa") version "1.9.24"
-    kotlin("plugin.allopen") version "1.9.24"
-    kotlin("plugin.noarg") version "1.9.24"
-    kotlin("kapt") version "1.9.24"
+    kotlin("jvm") version "1.9.25"
+    kotlin("plugin.spring") version "1.9.25"
+    kotlin("plugin.jpa") version "1.9.25"
+    kotlin("plugin.allopen") version "1.9.25"
+    kotlin("plugin.noarg") version "1.9.25"
+    kotlin("kapt") version "1.9.25"
 }
 
 group = "com.example"
