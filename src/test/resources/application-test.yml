@@ -5,37 +5,24 @@ spring:
   datasource:
     reader:
       driver-class-name: org.h2.Driver
-      jdbc-url: jdbc:h2:mem:practice?MODE=MYSQL&rewriteBatchedStatements=true&profileSQL=true&logger=Slf4JLogger&maxQuerySizeToLog=999999
+      jdbc-url: jdbc:h2:mem:practice?MODE=MYSQL
       username: sa
       password:
-      maximum-pool-size: 30
-      connection-timeout: 30000
-      max-lifetime: 900000
     writer:
       driver-class-name: org.h2.Driver
-      jdbc-url: jdbc:h2:mem:practice?MODE=MYSQL&rewriteBatchedStatements=true&profileSQL=true&logger=Slf4JLogger&maxQuerySizeToLog=999999
+      jdbc-url: jdbc:h2:mem:practice?MODE=MYSQL
       username: sa
       password:
-      maximum-pool-size: 30
-      connection-timeout: 30000
-      max-lifetime: 900000
   jpa:
-    hibernate:
-      ddl-auto: create
-    properties:
-      hibernate:
-        show_sql: true
-        format_sql: true
-        order_inserts: true
-        order_updates: true
-        jdbc:
-          batch_size: 1000
-    open-in-view: false
+    defer-datasource-initialization: false
+    h2:
+      console:
+        enabled: true
+  sql:
+    init:
+      mode: never
 
-logging.level:
-  org.hibernate.SQL: DEBUG
-  org.hibernate.type: TRACE
-  org.springframework.orm.jpa: DEBUG
-  org.springframework.transaction: DEBUG
-  org.springframework.jdbc: DEBUG
-  Exposed: DEBUG
+logging:
+  level:
+    org.hibernate.orm.jdbc.bind: TRACE
+    Exposed: DEBUG
