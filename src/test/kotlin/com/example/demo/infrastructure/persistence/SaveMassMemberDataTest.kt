@@ -22,7 +22,8 @@ internal class SaveMassMemberDataTest(
 ) : FunSpec({
 
         val count = 1_000
-        val memberFixture = FixturesMonkey.fixture()
+        val memberFixture = FixturesMonkey
+            .fixture()
             .giveMeBuilder<Member>()
             .set("name", Arbitraries.strings().ofMaxLength(64))
 
