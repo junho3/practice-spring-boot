@@ -10,10 +10,11 @@ import jakarta.persistence.Table
 @Entity
 @Table(name = "member")
 class Member(
+    @Column(name = "member_name")
+    val name: String,
+) {
     @Id
     @Column(name = "member_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long? = null,
-    @Column(name = "member_name")
-    val name: String,
-)
+    val id: Long? = null
+}
