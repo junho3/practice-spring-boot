@@ -18,16 +18,13 @@ class Product private constructor(
     @Column(name = "product_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
-
     @Column(name = "product_name", nullable = false)
     val name: String,
-
     @Column(name = "product_price", nullable = false)
     val price: BigDecimal,
-
     @Enumerated(EnumType.STRING)
     @Column(name = "product_status", nullable = false, length = 64)
-    val status: ProductStatus
+    val status: ProductStatus,
 ) {
     companion object {
         operator fun invoke(
@@ -40,7 +37,7 @@ class Product private constructor(
             return Product(
                 name = "상품_" + name,
                 price = price,
-                status = ProductStatus.READY
+                status = ProductStatus.READY,
             )
         }
 
@@ -50,7 +47,7 @@ class Product private constructor(
             return Product(
                 name = "상품_" + name,
                 price = BigDecimal.ONE,
-                status = ProductStatus.READY
+                status = ProductStatus.READY,
             )
         }
     }

@@ -33,7 +33,10 @@ internal class FindMemberCountServiceTest(
                         FixturesMonkey
                             .fixture()
                             .giveMeBuilder<Member>()
-                            .set("name", Arbitraries.strings().ofMinLength(1).ofMaxLength(64).filter { it.isNotBlank() })
+                            .set(
+                                "name",
+                                Arbitraries.strings().ofMinLength(1).ofMaxLength(64).filter { it.isNotBlank() },
+                            )
                             .sampleList(1_000)
 
                     memberJpaRepository.saveAll(members)
