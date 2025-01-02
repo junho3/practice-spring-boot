@@ -25,7 +25,7 @@ internal class SaveMassMemberDataTest(
             FixturesMonkey
                 .fixture()
                 .giveMeBuilder<Member>()
-                .set("name", Arbitraries.strings().ofMaxLength(64))
+                .set("name", Arbitraries.strings().ofMinLength(1).ofMaxLength(64).filter { it.isNotBlank() })
 
         test("1000명의 회원 데이터를 Jpa Save()로 저장했을 때") {
             for (i in 1..count) {

@@ -24,7 +24,7 @@ internal class FindMemberCountServiceTest(
 
         beforeSpec { memberJpaRepository.deleteAll() }
 
-        describe("getMemberCountByChunk 메소드는") {
+        describe("getMemberCountByChunk()는") {
 
             context("1000명의 회원이 존재했을 때") {
 
@@ -33,7 +33,7 @@ internal class FindMemberCountServiceTest(
                         FixturesMonkey
                             .fixture()
                             .giveMeBuilder<Member>()
-                            .set("name", Arbitraries.strings().ofMaxLength(64))
+                            .set("name", Arbitraries.strings().ofMinLength(1).ofMaxLength(64).filter { it.isNotBlank() })
                             .sampleList(1_000)
 
                     memberJpaRepository.saveAll(members)
