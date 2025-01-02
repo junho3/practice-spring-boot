@@ -24,6 +24,10 @@ class Product private constructor(
 
     @Column(name = "product_price", nullable = false)
     val price: BigDecimal,
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "product_status", nullable = false, length = 64)
+    val status: ProductStatus
 ) {
     companion object {
         operator fun invoke(
@@ -36,6 +40,7 @@ class Product private constructor(
             return Product(
                 name = name,
                 price = price,
+                status = ProductStatus.READY
             )
         }
     }
