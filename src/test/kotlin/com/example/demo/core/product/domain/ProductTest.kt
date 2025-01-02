@@ -38,4 +38,10 @@ internal class ProductTest : FunSpec({
 
         actual.name shouldBe "상품_사과"
     }
+
+    test("name만 받는 생성자로 객체를 생성했을 때 price는 BigDecimal.ONE을 리턴한다.") {
+        val actual = Product(name = "사과")
+
+        actual.price shouldBe BigDecimal.ONE
+    }
 })
