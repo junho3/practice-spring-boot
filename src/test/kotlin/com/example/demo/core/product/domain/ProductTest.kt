@@ -30,4 +30,12 @@ internal class ProductTest : FunSpec({
 
         shouldThrow<IllegalArgumentException> { Product(name = "사과", price = price) }
     }
+
+    test("Product.name은 처음 세 글자가 '상품_'을 포함한다.") {
+        val name = "사과"
+
+        val actual = Product(name = name, price = BigDecimal.ONE)
+
+        actual.name shouldBe "상품_사과"
+    }
 })
