@@ -38,7 +38,7 @@ class Product private constructor(
             require(price > BigDecimal.ZERO) { "Price must not be zero or negative" }
 
             return Product(
-                name = name,
+                name = "상품_" + name,
                 price = price,
                 status = ProductStatus.READY
             )
