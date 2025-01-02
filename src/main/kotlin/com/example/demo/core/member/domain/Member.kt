@@ -17,4 +17,8 @@ class Member(
     @Column(name = "member_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null
+
+    init {
+        require(name.isNotBlank()) { "Name must not be blank" }
+    }
 }
