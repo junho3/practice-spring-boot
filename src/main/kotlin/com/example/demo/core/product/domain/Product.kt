@@ -35,7 +35,7 @@ class Product private constructor(
             price: BigDecimal,
         ): Product {
             require(name.isNotBlank()) { "Name must not be blank" }
-            require(price > BigDecimal.ONE) { "Price must not be zero or negative" }
+            require(price > BigDecimal.ZERO) { "Price must not be zero or negative" }
 
             return Product(
                 name = name,
