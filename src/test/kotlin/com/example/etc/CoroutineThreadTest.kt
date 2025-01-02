@@ -11,10 +11,10 @@ internal class CoroutineThreadTest(
     private val coroutineClass: CoroutineClass = CoroutineClass(),
 ) : FunSpec({
 
-    test("코루틴 스레드 테스트") {
-        coroutineClass.foo()
-    }
-})
+        test("코루틴 스레드 테스트") {
+            coroutineClass.foo()
+        }
+    })
 
 class CoroutineClass {
     suspend fun foo() {
