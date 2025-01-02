@@ -43,5 +43,15 @@ class Product private constructor(
                 status = ProductStatus.READY
             )
         }
+
+        operator fun invoke(name: String): Product {
+            require(name.isNotBlank()) { "Name must not be blank" }
+
+            return Product(
+                name = "상품_" + name,
+                price = BigDecimal.ONE,
+                status = ProductStatus.READY
+            )
+        }
     }
 }
